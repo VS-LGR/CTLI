@@ -1,3 +1,5 @@
+\"use client\";
+
 import { useState, type FormEvent } from "react";
 import { Input } from "@/ui/Input";
 import { Textarea } from "@/ui/Textarea";
