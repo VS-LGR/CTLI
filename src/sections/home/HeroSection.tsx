@@ -40,23 +40,21 @@ export function HeroSection({ lang }: HeroSectionProps) {
             </a>
             <a
               href="#services"
-              className="text-sm text-gray-200 underline-offset-4 hover:underline"
+              className="text-sm text-slate-600 underline-offset-4 hover:text-primary hover:underline"
             >
               {secondaryCtaLabel}
             </a>
           </div>
         </div>
-        <div className="hidden md:block rounded-3xl border border-primary/40 bg-gradient-to-br from-primary/30 via-accent/10 to-black/60 p-[1px]">
-          <div className="h-full rounded-[22px] bg-black/80 p-6">
-            <p className="text-xs font-semibold uppercase tracking-wide text-primary">
-              ISO/IEC 17025 • Balanças • Certificados
-            </p>
-            <p className="mt-4 text-sm text-gray-200">
+        <div className="hidden md:block rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wide text-primary">
+            ISO/IEC 17025 • Balanças • Certificados
+          </p>
+          <p className="mt-4 text-sm text-slate-600">
               {lang === "pt"
                 ? "Mais de 20 anos de experiência em normas técnicas, acreditação e metrologia, apoiando laboratórios em todo o Brasil."
                 : "Over 20 years of experience in technical standards, accreditation and metrology, supporting laboratories throughout Brazil."}
-            </p>
-          </div>
+          </p>
         </div>
       </div>
     </SectionContainer>

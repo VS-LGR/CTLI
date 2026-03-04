@@ -10,7 +10,7 @@ type TextProps = {
 export function Text({ children, as = "p", muted, className }: TextProps) {
   const Tag = as;
   const base = "text-sm md:text-base leading-relaxed";
-  const tone = muted ? "text-gray-400" : "text-gray-100";
+  const tone = muted ? "text-slate-500" : "text-slate-700";
   const classes = `${base} ${tone} ${className ?? ""}`;
 
   return <Tag className={classes.trim()}>{children}</Tag>;

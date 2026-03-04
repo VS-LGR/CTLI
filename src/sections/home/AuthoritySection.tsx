@@ -30,7 +30,7 @@ export function AuthoritySection({ lang }: AuthoritySectionProps) {
           </p>
           <Text>{founder.bio[lang]}</Text>
         </div>
-        <div className="rounded-2xl border border-accent/50 bg-black/70 p-4 text-xs text-gray-300">
+        <div className="rounded-2xl border border-border bg-slate-50 p-4 text-xs text-slate-600">
           {lang === "pt" ? (
             <ul className="list-disc space-y-1 pl-4">
               <li>

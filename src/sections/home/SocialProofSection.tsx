@@ -31,10 +31,10 @@ export function SocialProofSection({ lang }: SocialProofSectionProps) {
             <Text muted>
               {lang === "pt" ? "Depoimento" : "Testimonial"}
             </Text>
-            <p className="text-sm text-gray-100">
+            <p className="text-sm text-slate-700">
               “{mainTestimonial.quote[lang]}”
             </p>
-            <p className="text-xs font-medium text-gray-300">
+            <p className="text-xs font-medium text-slate-500">
               {mainTestimonial.client} • {mainTestimonial.role}
             </p>
           </div>
@@ -47,7 +47,7 @@ export function SocialProofSection({ lang }: SocialProofSectionProps) {
             {clients.map((client) => (
               <div
                 key={client.id}
-                className="flex items-center justify-center rounded-xl border border-border/60 bg-black/40 px-3 py-3 text-xs font-medium text-gray-100"
+                className="flex items-center justify-center rounded-xl border border-border bg-white px-3 py-3 text-xs font-medium text-slate-700 shadow-sm"
               >
                 {client.label[lang]}
               </div>

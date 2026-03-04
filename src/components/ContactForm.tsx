@@ -71,11 +71,11 @@ export function ContactForm({ lang }: ContactFormProps) {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="space-y-4 rounded-2xl border border-border/60 bg-black/60 p-6 shadow-lg shadow-black/40"
+      className="space-y-4 rounded-2xl border border-border bg-white p-6 shadow-sm"
     >
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-1">
-          <label className="text-xs font-medium text-gray-200">
+          <label className="text-xs font-medium text-slate-700">
             {labels.name}
           </label>
           <Input
@@ -88,7 +88,7 @@ export function ContactForm({ lang }: ContactFormProps) {
           ) : null}
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-medium text-gray-200">
+          <label className="text-xs font-medium text-slate-700">
             {labels.email}
           </label>
           <Input
@@ -102,7 +102,7 @@ export function ContactForm({ lang }: ContactFormProps) {
           ) : null}
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-medium text-gray-200">
+          <label className="text-xs font-medium text-slate-700">
             {labels.company}
           </label>
           <Input
@@ -111,7 +111,7 @@ export function ContactForm({ lang }: ContactFormProps) {
           />
         </div>
         <div className="space-y-1">
-          <label className="text-xs font-medium text-gray-200">
+          <label className="text-xs font-medium text-slate-700">
             {labels.phone}
           </label>
           <Input
@@ -121,7 +121,7 @@ export function ContactForm({ lang }: ContactFormProps) {
         </div>
       </div>
       <div className="space-y-1">
-        <label className="text-xs font-medium text-gray-200">
+        <label className="text-xs font-medium text-slate-700">
           {labels.message}
         </label>
         <Textarea

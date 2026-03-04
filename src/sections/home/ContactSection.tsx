@@ -27,7 +27,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
     <SectionLayout id="contact" title={title} subtitle={subtitle}>
       <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
         <ContactForm lang={lang} />
-        <div className="space-y-4 rounded-2xl border border-border/60 bg-black/70 p-5 text-sm text-gray-200">
+        <div className="space-y-4 rounded-2xl border border-border bg-slate-50 p-5 text-sm text-slate-700">
           <p>
             {lang === "pt"
               ? "Preferem uma conversa direta? Utilize o botão abaixo para abrir o WhatsApp com uma mensagem inicial já preparada."
@@ -36,7 +36,7 @@ export function ContactSection({ lang }: ContactSectionProps) {
           <a href={buildWhatsAppUrl(whatsappLabel)}>
             <Button size="md">{whatsappLabel}</Button>
           </a>
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-slate-500">
             {siteConfig.email} • {siteConfig.whatsappDisplay}
           </p>
         </div>

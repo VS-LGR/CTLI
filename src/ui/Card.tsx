@@ -7,7 +7,7 @@ type CardProps = {
 
 export function Card({ children, className }: CardProps) {
   const base =
-    "rounded-2xl border border-border/60 bg-muted/60 backdrop-blur-sm shadow-lg shadow-black/40 p-6";
+    "rounded-2xl border border-border bg-white p-6 shadow-sm";
   const classes = `${base} ${className ?? ""}`;
 
   return <div className={classes.trim()}>{children}</div>;

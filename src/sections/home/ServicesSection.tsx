@@ -28,7 +28,7 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
             <div className="space-y-3">
               <Heading level={3}>{service.title[lang]}</Heading>
               <Text>{service.description[lang]}</Text>
-              <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-gray-300">
+              <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-slate-600">
                 {service.highlights[lang].map((item) => (
                   <li key={item}>{item}</li>
                 ))}

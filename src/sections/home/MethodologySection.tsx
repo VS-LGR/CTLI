@@ -37,12 +37,12 @@ export function MethodologySection({ lang }: MethodologySectionProps) {
         {steps.map((step, index) => (
           <li
             key={step}
-            className="flex items-start gap-3 rounded-2xl border border-border/60 bg-black/60 p-4"
+            className="flex items-start gap-3 rounded-2xl border border-border bg-slate-50 p-4"
           >
-            <span className="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
+            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
               {index + 1}
             </span>
-            <p className="text-sm text-gray-200">{step}</p>
+            <p className="text-sm text-slate-700">{step}</p>
           </li>
         ))}
       </ol>

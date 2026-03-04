@@ -10,7 +10,7 @@ type PageLayoutProps = {
 
 export function PageLayout({ children, lang = "pt" }: PageLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
+    <div className="flex min-h-screen flex-col bg-background text-foreground antialiased">
       <Header lang={lang} />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} />

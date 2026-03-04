@@ -7,14 +7,14 @@ type FooterProps = {
 
 export function Footer({ lang = "pt" }: FooterProps) {
   return (
-    <footer className="border-t border-border/60 bg-black/70">
+    <footer className="border-t border-border bg-slate-50">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-8 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-1 text-xs text-gray-400">
-          <p className="font-medium text-gray-200">{siteConfig.name}</p>
+        <div className="space-y-1 text-xs text-slate-500">
+          <p className="font-medium text-slate-700">{siteConfig.name}</p>
           <p>{siteConfig.tagline[lang]}</p>
           <p>© {new Date().getFullYear()} CTLI. Todos os direitos reservados.</p>
         </div>
-        <div className="space-y-1 text-xs text-gray-400">
+        <div className="space-y-1 text-xs text-slate-500">
           <p>{siteConfig.address.line1}</p>
           <p>{siteConfig.address.line2}</p>
           <p>

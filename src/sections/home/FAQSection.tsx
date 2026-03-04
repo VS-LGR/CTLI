@@ -23,12 +23,12 @@ export function FAQSection({ lang }: FAQSectionProps) {
         {faqItems.map((item) => (
           <details
             key={item.id}
-            className="group rounded-2xl border border-border/60 bg-black/60 p-4"
+            className="group rounded-2xl border border-border bg-slate-50 p-4"
           >
-            <summary className="cursor-pointer text-sm font-medium text-gray-100">
+            <summary className="cursor-pointer text-sm font-medium text-slate-800">
               {item.question[lang]}
             </summary>
-            <p className="mt-2 text-sm text-gray-300">
+            <p className="mt-2 text-sm text-slate-600">
               {item.answer[lang]}
             </p>
           </details>

@@ -19,14 +19,14 @@ export function SectionLayout({
       <div className="space-y-10">
         <div className="max-w-2xl space-y-3">
           {typeof title === "string" ? (
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
               {title}
             </h2>
           ) : (
             title
           )}
           {subtitle ? (
-            <p className="text-sm md:text-base text-gray-300">{subtitle}</p>
+            <p className="text-sm md:text-base text-slate-500">{subtitle}</p>
           ) : null}
         </div>
         {children}
