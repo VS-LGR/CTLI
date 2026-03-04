@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { SupportedLang } from "@/lib/i18n";
 
-const LOGO_URL = "https://i.imgur.com/3jZvtNe.png";
+const LOGO_URL = "https://i.imgur.com/1eBCIBT.png";
 
 const KEYWORDS: Record<SupportedLang, string> = {
   pt: "Consultoria • ISO/IEC 17025",
@@ -38,7 +38,7 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
 
   return (
     <div
-      className={`intro-screen fixed inset-0 z-50 flex flex-col items-center justify-center bg-white transition-opacity duration-[500ms] ease-out ${
+      className={`intro-screen fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-50 transition-opacity duration-[500ms] ease-out ${
         fadeOut ? "intro-screen-out" : "intro-screen-in"
       }`}
       aria-hidden="true"
@@ -53,12 +53,12 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
         ))}
       </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
-        <div className="intro-logo relative h-[120px] w-[280px] sm:h-[140px] sm:w-[320px] md:h-[160px] md:w-[360px]">
+        <div className="intro-logo relative h-[120px] w-[280px] bg-slate-50 sm:h-[140px] sm:w-[320px] md:h-[160px] md:w-[360px]">
           <Image
             src={LOGO_URL}
             alt="CTLI Consultoria e Treinamento"
             fill
-            className="object-contain object-center"
+            className="object-contain object-center mix-blend-multiply"
             priority
             sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 360px"
           />
