@@ -28,7 +28,7 @@ export default function LangLayout({ children, params }: LangLayoutProps) {
 
   return (
     <html lang={lang === "pt" ? "pt-BR" : "en"}>
-      <body>
+      <body className="page-bg">
         <PageLayout lang={lang}>{children}</PageLayout>
       </body>
     </html>
