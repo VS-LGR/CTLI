@@ -4,8 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { SupportedLang } from "@/lib/i18n";
 
-const LOGO_URL =
-  "https://static.wixstatic.com/media/3b6d59_02021d49f3f145be957b05a2b4dddda3~mv2.png/v1/crop/x_41,y_179,w_406,h_133/fill/w_545,h_186,al_c,lg_1,q_85,enc_avif,quality_auto/2-Photoroom.png";
+const LOGO_URL = "https://i.imgur.com/3jZvtNe.png";
 
 const KEYWORDS: Record<SupportedLang, string> = {
   pt: "Consultoria • ISO/IEC 17025",
@@ -44,7 +43,16 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
       }`}
       aria-hidden="true"
     >
-      <div className="flex flex-col items-center gap-6 px-4">
+      <div className="intro-lines" aria-hidden="true">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div
+            key={i}
+            className="intro-line"
+            style={{ animationDelay: `${i * 0.08}s` }}
+          />
+        ))}
+      </div>
+      <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="intro-logo relative h-[120px] w-[280px] sm:h-[140px] sm:w-[320px] md:h-[160px] md:w-[360px]">
           <Image
             src={LOGO_URL}
