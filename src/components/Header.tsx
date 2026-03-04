@@ -14,7 +14,10 @@ export function Header({ lang = "pt" }: HeaderProps) {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href={lang === "pt" ? "/(pt)" : "/(en)"} className="flex items-center gap-2">
+        <Link
+          href={lang === "pt" ? "/pt" : "/en"}
+          className="flex items-center gap-2"
+        >
           <span className="text-base font-semibold tracking-tight">
             {siteConfig.name}
           </span>

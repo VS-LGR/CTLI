@@ -7,19 +7,28 @@ import { SocialProofSection } from "@/sections/home/SocialProofSection";
 import { CertificationSection } from "@/sections/home/CertificationSection";
 import { FAQSection } from "@/sections/home/FAQSection";
 import { ContactSection } from "@/sections/home/ContactSection";
+import { isSupportedLang, type SupportedLang } from "@/lib/i18n";
 
-export default function HomePtPage() {
+type LangPageProps = {
+  params: { lang: string };
+};
+
+export default function LangHomePage({ params }: LangPageProps) {
+  const lang: SupportedLang = isSupportedLang(params.lang)
+    ? params.lang
+    : "pt";
+
   return (
     <>
-      <HeroSection lang="pt" />
-      <AboutSection lang="pt" />
-      <ServicesSection lang="pt" />
-      <MethodologySection lang="pt" />
-      <AuthoritySection lang="pt" />
-      <SocialProofSection lang="pt" />
-      <CertificationSection lang="pt" />
-      <FAQSection lang="pt" />
-      <ContactSection lang="pt" />
+      <HeroSection lang={lang} />
+      <AboutSection lang={lang} />
+      <ServicesSection lang={lang} />
+      <MethodologySection lang={lang} />
+      <AuthoritySection lang={lang} />
+      <SocialProofSection lang={lang} />
+      <CertificationSection lang={lang} />
+      <FAQSection lang={lang} />
+      <ContactSection lang={lang} />
     </>
   );
 }
