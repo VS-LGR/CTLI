@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { IntroAnimation } from "@/components/IntroAnimation";
+import { IntroWithScreen } from "@/components/IntroWithScreen";
 import type { SupportedLang } from "@/lib/i18n";
 
 type PageLayoutProps = {
@@ -14,7 +14,7 @@ export function PageLayout({ children, lang = "pt" }: PageLayoutProps) {
     <div className="flex min-h-screen flex-col text-foreground antialiased">
       <Header lang={lang} />
       <main className="flex-1">
-        <IntroAnimation>{children}</IntroAnimation>
+        <IntroWithScreen lang={lang}>{children}</IntroWithScreen>
       </main>
       <Footer lang={lang} />
     </div>

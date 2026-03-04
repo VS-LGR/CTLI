@@ -56,6 +56,36 @@ body.page-bg {
   animation: page-intro 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+/* Intro splash: logo + keywords */
+.intro-screen-in {
+  opacity: 1;
+}
+
+.intro-screen-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes intro-content-in {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.intro-logo {
+  animation: intro-content-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.intro-keywords {
+  animation: intro-content-in 0.6s 0.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  opacity: 0;
+}
+
 a {
   @apply text-primary underline-offset-4 hover:underline;
 }
