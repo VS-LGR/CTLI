@@ -18,8 +18,8 @@ export function SocialProofSection({ lang }: SocialProofSectionProps) {
 
   const subtitle =
     lang === "pt"
-      ? "Laboratórios, indústrias e empresas de pesagem que já contam com a CTLI."
-      : "Laboratories, industries and weighing companies that already rely on CTLI.";
+      ? "Laboratórios de calibração, empresas de pesagem e indústrias que fortalecem seus resultados de acreditação e calibração com a CTLI."
+      : "Calibration laboratories, weighing companies and industries that strengthen their accreditation and calibration results with CTLI.";
 
   const mainTestimonial = testimonials[0];
 

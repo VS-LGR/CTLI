@@ -16,8 +16,8 @@ export const teamMembers: TeamMember[] = [
       en: "Founder • Quality Manager and Technical Manager in multiple laboratories"
     },
     bio: {
-      pt: "Lidera a equipe da CTLI com foco em resultados consistentes, garantindo que cada projeto de consultoria, treinamento e acreditação seja conduzido com rigor técnico e visão estratégica.",
-      en: "Leads CTLI's team with a strong focus on consistent results, ensuring each consulting, training and accreditation project is delivered with technical rigor and strategic vision."
+      pt: "Lidera a equipe da CTLI com mais de 20 anos de experiência em metrologia, acreditação e gestão da qualidade. Atuou em projetos que contribuíram para a acreditação de dezenas de laboratórios de calibração de massas em todo o Brasil, garantindo que cada projeto de consultoria, treinamento e acreditação seja conduzido com rigor técnico e visão estratégica.",
+      en: "Leads CTLI's team with more than 20 years of experience in metrology, accreditation and quality management. Has worked on projects that contributed to the accreditation of dozens of mass calibration laboratories across Brazil, ensuring each consulting, training and accreditation project is delivered with technical rigor and strategic vision."
     }
   }
 ];

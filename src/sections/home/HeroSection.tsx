@@ -13,9 +13,13 @@ type HeroSectionProps = {
 
 export function HeroSection({ lang }: HeroSectionProps) {
   const primaryCtaLabel =
-    lang === "pt" ? "Falar agora com especialista" : "Talk to a specialist";
+    lang === "pt"
+      ? "Agendar diagnóstico de acreditação"
+      : "Schedule accreditation assessment";
   const secondaryCtaLabel =
-    lang === "pt" ? "Ver soluções em consultoria" : "See consulting solutions";
+    lang === "pt"
+      ? "Ver soluções em ISO/IEC 17025"
+      : "See ISO/IEC 17025 solutions";
 
   return (
     <SectionContainer id="hero">
@@ -23,13 +27,13 @@ export function HeroSection({ lang }: HeroSectionProps) {
         <div className="space-y-6">
           <Badge>
             {lang === "pt"
-              ? "Especialistas em ISO/IEC 17025:2017"
-              : "Experts in ISO/IEC 17025:2017"}
+              ? "Consultoria ISO/IEC 17025, calibração e certificados"
+              : "ISO/IEC 17025 consulting, calibration and certificates"}
           </Badge>
           <Heading level={1}>
             {lang === "pt"
-              ? "Consultoria, treinamento e acreditação pensados para laboratórios que não podem errar."
-              : "Consulting, training and accreditation for laboratories that cannot afford mistakes."}
+              ? "Acreditação, calibração e certificados pensados para laboratórios que não podem errar."
+              : "Accreditation, calibration and certificates for laboratories that cannot afford mistakes."}
           </Heading>
           <Text>
             {siteConfig.tagline[lang]}

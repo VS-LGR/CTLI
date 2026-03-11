@@ -3,8 +3,10 @@ import type { SupportedLang } from "@/lib/i18n";
 export type ServiceId =
   | "highImpactTraining"
   | "specializedConsulting"
+  | "isoImplementation"
   | "accreditationMaintenance"
-  | "certificateIssuance";
+  | "certificateIssuance"
+  | "technicalProjects";
 
 export type Service = {
   id: ServiceId;
@@ -34,6 +36,29 @@ export const services: Service[] = [
         "Practical content for day-to-day operations",
         "Focus on ISO/IEC 17025 and good weighing practices",
         "In-company or open classes"
+      ]
+    }
+  },
+  {
+    id: "isoImplementation",
+    title: {
+      pt: "Implantação e Acreditação ISO/IEC 17025",
+      en: "ISO/IEC 17025 Implementation and Accreditation"
+    },
+    description: {
+      pt: "Apoio completo para planejar, implementar e evidenciar a competência técnica exigida pela ISO/IEC 17025.",
+      en: "End-to-end support to plan, implement and demonstrate the technical competence required by ISO/IEC 17025."
+    },
+    highlights: {
+      pt: [
+        "Diagnóstico do laboratório e plano de implantação",
+        "Desenho do sistema de gestão e da documentação técnica",
+        "Preparação para avaliações da CGCRE/INMETRO"
+      ],
+      en: [
+        "Laboratory diagnosis and implementation roadmap",
+        "Design of management system and technical documentation",
+        "Preparation for CGCRE/INMETRO assessments"
       ]
     }
   },
@@ -103,6 +128,29 @@ export const services: Service[] = [
         "Automated uncertainty calculation",
         "Fast, standardized issuance",
         "Reduced manual errors"
+      ]
+    }
+  },
+  {
+    id: "technicalProjects",
+    title: {
+      pt: "Projetos em Qualidade, Meio Ambiente e SST",
+      en: "Projects in Quality, Environment and OHS"
+    },
+    description: {
+      pt: "Projetos técnicos sob medida para integrar qualidade, meio ambiente e segurança do trabalho à estratégia do negócio.",
+      en: "Tailored technical projects to align quality, environment and occupational health and safety with business strategy."
+    },
+    highlights: {
+      pt: [
+        "Sistemas de gestão integrados",
+        "Mapeamento de riscos e controles operacionais",
+        "Adequação a requisitos legais e normativos"
+      ],
+      en: [
+        "Integrated management systems",
+        "Risk mapping and operational controls",
+        "Compliance with legal and standard requirements"
       ]
     }
   }

@@ -43,15 +43,6 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
       }`}
       aria-hidden="true"
     >
-      <div className="intro-lines" aria-hidden="true">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <div
-            key={i}
-            className="intro-line"
-            style={{ animationDelay: `${i * 0.08}s` }}
-          />
-        ))}
-      </div>
       <div className="relative z-10 flex flex-col items-center gap-6 px-4">
         <div className="intro-logo relative h-[120px] w-[280px] bg-slate-50 sm:h-[140px] sm:w-[320px] md:h-[160px] md:w-[360px]">
           <Image

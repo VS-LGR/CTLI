@@ -45,6 +45,10 @@ export function AuthoritySection({ lang }: AuthoritySectionProps) {
                 Experiência formando equipes em ISO/IEC 17025, boas práticas de
                 pesagem e cálculo de incerteza.
               </li>
+              <li>
+                Histórico de participação em projetos de acreditação de
+                laboratórios de calibração de massas em todo o Brasil.
+              </li>
             </ul>
           ) : (
             <ul className="list-disc space-y-1 pl-4">
@@ -59,6 +63,10 @@ export function AuthoritySection({ lang }: AuthoritySectionProps) {
               <li>
                 Experience training teams in ISO/IEC 17025, good weighing
                 practices and uncertainty calculation.
+              </li>
+              <li>
+                Track record of supporting accreditation projects for mass
+                calibration laboratories across Brazil.
               </li>
             </ul>
           )}

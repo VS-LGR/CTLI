@@ -56,7 +56,7 @@ body.page-bg {
   animation: page-intro 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Intro splash: logo + keywords */
+/* Intro splash: container, logo + keywords */
 .intro-screen-in {
   opacity: 1;
 }
@@ -86,40 +86,41 @@ body.page-bg {
   opacity: 0;
 }
 
-/* Rising lines: from bottom to top, duration matches intro (2.7s) */
-.intro-lines {
+/* Futuristic glow in intro background */
+.intro-screen {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-screen::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  gap: 2.5vw;
-  align-items: flex-end;
-  padding-bottom: 0;
+  inset: -40%;
+  background: radial-gradient(
+      circle at 10% 120%,
+      rgba(14, 165, 233, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 90% -10%,
+      rgba(8, 145, 178, 0.25),
+      transparent 55%
+    );
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(1.05);
+  mix-blend-mode: multiply;
   pointer-events: none;
+  animation: intro-glow 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.intro-line {
-  width: 3px;
-  max-width: 4px;
-  height: 0;
-  background: linear-gradient(
-    to top,
-    rgba(14, 165, 233, 0.5) 0%,
-    rgba(8, 145, 178, 0.25) 40%,
-    transparent 100%
-  );
-  transform-origin: bottom center;
-  animation: intro-line-rise 2.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-@keyframes intro-line-rise {
+@keyframes intro-glow {
   from {
-    height: 0;
-    opacity: 0.6;
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(1.08);
   }
   to {
-    height: 100%;
-    opacity: 1;
+    opacity: 0.7;
+    transform: translate3d(0, -8px, 0) scale(1);
   }
 }
 
