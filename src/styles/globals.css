@@ -11,29 +11,24 @@ body {
   @apply text-foreground antialiased;
 }
 
-/* Page background: gradient + grid (calibration / precision) – applied on body */
+/* Page background: clean corporate gradient – applied on body */
 body.page-bg {
   min-height: 100vh;
-  background-color: #f0f9ff;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 31px,
-      rgba(14, 165, 233, 0.07) 31px,
-      rgba(14, 165, 233, 0.07) 32px
+  background-color: #f5f7fb;
+  background-image: radial-gradient(
+      circle at 10% 0%,
+      rgba(14, 165, 233, 0.18),
+      transparent 55%
     ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 31px,
-      rgba(14, 165, 233, 0.07) 31px,
-      rgba(14, 165, 233, 0.07) 32px
+    radial-gradient(
+      circle at 90% 100%,
+      rgba(8, 145, 178, 0.16),
+      transparent 55%
     ),
-    linear-gradient(160deg, #e0f2fe 0%, #f0f9ff 28%, #f8fafc 55%, #f1f5f9 100%);
-  background-attachment: scroll, scroll, scroll;
-  background-size: 32px 32px, 32px 32px, 100% 100%;
-  background-position: 0 0, 0 0, 0 0;
+    linear-gradient(180deg, #f9fbff 0%, #f3f4f9 40%, #f5f7fb 100%);
+  background-attachment: fixed;
+  background-size: 110% 110%, 110% 110%, 100% 100%;
+  background-position: 0 0, 100% 100%, 0 0;
 }
 
 /* Intro animation: only runs when .page-intro-visible is added (on client) */
@@ -78,11 +73,11 @@ body.page-bg {
 }
 
 .intro-logo {
-  animation: intro-content-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: intro-content-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .intro-keywords {
-  animation: intro-content-in 0.6s 0.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: intro-content-in 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   opacity: 0;
 }
 
@@ -110,7 +105,7 @@ body.page-bg {
   transform: translate3d(0, 24px, 0) scale(1.05);
   mix-blend-mode: multiply;
   pointer-events: none;
-  animation: intro-glow 2.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: intro-glow 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes intro-glow {
