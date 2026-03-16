@@ -1,6 +1,7 @@
 import { HeroSection } from "@/sections/home/HeroSection";
 import { AboutSection } from "@/sections/home/AboutSection";
 import { ServicesSection } from "@/sections/home/ServicesSection";
+import { TrainingsSection } from "@/sections/home/TrainingsSection";
 import { MethodologySection } from "@/sections/home/MethodologySection";
 import { AuthoritySection } from "@/sections/home/AuthoritySection";
 import { SocialProofSection } from "@/sections/home/SocialProofSection";
@@ -23,6 +24,7 @@ export default function LangHomePage({ params }: LangPageProps) {
       <HeroSection lang={lang} />
       <AboutSection lang={lang} />
       <ServicesSection lang={lang} />
+      <TrainingsSection lang={lang} />
       <MethodologySection lang={lang} />
       <AuthoritySection lang={lang} />
       <SocialProofSection lang={lang} />

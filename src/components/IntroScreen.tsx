@@ -3,13 +3,11 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { SupportedLang } from "@/lib/i18n";
-
-const LOGO_URL =
-  "https://static.wixstatic.com/media/3b6d59_02021d49f3f145be957b05a2b4dddda3~mv2.png/v1/crop/x_41,y_179,w_406,h_133/fill/w_545,h_186,al_c,lg_1,q_85,enc_avif,quality_auto/2-Photoroom.png";
+import introGif from "./CTLI INTRo.gif";
 
 const KEYWORDS: Record<SupportedLang, string> = {
-  pt: "Consultoria • ISO/IEC 17025",
-  en: "Consulting • ISO/IEC 17025"
+  pt: "Metrologia, ISO 17025 e acreditação",
+  en: "Metrology, ISO 17025 and accreditation"
 };
 
 type IntroScreenProps = {
@@ -17,8 +15,8 @@ type IntroScreenProps = {
   onComplete: () => void;
 };
 
-const INTRO_STAY_MS = 2200;
-const FADE_OUT_MS = 500;
+const INTRO_STAY_MS = 2600;
+const FADE_OUT_MS = 600;
 
 export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
   const [fadeOut, setFadeOut] = useState(false);
@@ -39,23 +37,23 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
 
   return (
     <div
-      className={`intro-screen fixed inset-0 z-50 flex flex-col items-center justify-center bg-slate-50 transition-opacity duration-[600ms] ease-out ${
+      className={`intro-screen fixed inset-0 z-50 flex items-center justify-center bg-slate-950 transition-opacity duration-[700ms] ease-out ${
         fadeOut ? "intro-screen-out" : "intro-screen-in"
       }`}
       aria-hidden="true"
     >
-      <div className="relative z-10 flex flex-col items-center gap-6 px-4">
-        <div className="intro-logo relative h-[120px] w-[260px] bg-transparent sm:h-[140px] sm:w-[300px] md:h-[160px] md:w-[340px]">
-          <Image
-            src={LOGO_URL}
-            alt="CTLI Consultoria e Treinamento"
-            fill
-            className="object-contain object-center mix-blend-multiply"
-            priority
-            sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 360px"
-          />
-        </div>
-        <p className="intro-keywords text-center text-sm font-medium tracking-wide text-slate-600 sm:text-base">
+      <div className="absolute inset-0">
+        <Image
+          src={introGif}
+          alt=""
+          fill
+          className="object-cover opacity-70 mix-blend-screen"
+          priority
+        />
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">
+        <p className="intro-keywords text-xs font-medium uppercase tracking-[0.25em] text-slate-200/80 sm:text-sm">
           {KEYWORDS[lang]}
         </p>
       </div>
