@@ -29,13 +29,13 @@ export function TrainingsSection({ lang }: TrainingsSectionProps) {
 
   return (
     <SectionLayout id="trainings" title={title} subtitle={subtitle}>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {trainingCategories.map((category) => (
           <Card key={category.id}>
             <div className="flex h-full flex-col gap-3">
               <Heading level={3}>{category.title[lang]}</Heading>
               <Text>{category.description[lang]}</Text>
-              <ul className="mt-1 list-disc space-y-1 pl-4 text-xs text-slate-600">
+              <ul className="mt-1 list-disc space-y-1 pl-4 text-sm text-slate-600">
                 {category.examples[lang].map((example) => (
                   <li key={example}>{example}</li>
                 ))}

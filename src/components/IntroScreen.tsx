@@ -37,12 +37,12 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
 
   return (
     <div
-      className={`intro-screen fixed inset-0 z-50 flex items-center justify-center bg-slate-950 transition-opacity duration-[700ms] ease-out ${
+      className={`intro-screen fixed inset-0 z-50 flex h-screen w-screen items-center justify-center bg-slate-950 transition-opacity duration-[700ms] ease-out ${
         fadeOut ? "intro-screen-out" : "intro-screen-in"
       }`}
       aria-hidden="true"
     >
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src={introGif}
           alt=""
