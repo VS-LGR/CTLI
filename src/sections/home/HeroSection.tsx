@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionContainer } from "@/ui/SectionContainer";
 import { Badge } from "@/ui/Badge";
 import { Heading } from "@/ui/Heading";
@@ -6,6 +7,7 @@ import { Button } from "@/ui/Button";
 import { siteConfig } from "@/config/site";
 import { buildWhatsAppUrl } from "@/lib/cta";
 import type { SupportedLang } from "@/lib/i18n";
+import introGif from "@/components/CTLI INTRo.gif";
 
 type HeroSectionProps = {
   lang: SupportedLang;
@@ -23,9 +25,19 @@ export function HeroSection({ lang }: HeroSectionProps) {
 
   return (
     <SectionContainer id="hero">
-      <div className="overflow-hidden rounded-3xl bg-slate-950 px-6 py-10 text-slate-50 shadow-lg ring-1 ring-slate-900/40 md:px-10 md:py-14">
+      <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-6 py-10 text-slate-50 shadow-lg ring-1 ring-slate-900/40 md:px-10 md:py-14">
         <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 h-80 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.3),_transparent_60%)]" />
-        <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+        <div className="pointer-events-none absolute inset-y-0 right-[-10%] -z-20 hidden w-1/2 opacity-25 md:block">
+          <Image
+            src={introGif}
+            alt=""
+            fill
+            className="object-cover"
+            priority={false}
+            sizes="50vw"
+          />
+        </div>
+        <div className="relative grid items-center gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
           <div className="space-y-6">
             <Badge>
               {lang === "pt"
