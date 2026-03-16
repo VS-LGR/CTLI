@@ -15,8 +15,8 @@ type IntroScreenProps = {
   onComplete: () => void;
 };
 
-const INTRO_STAY_MS = 2600;
-const FADE_OUT_MS = 600;
+const INTRO_STAY_MS = 3400;
+const FADE_OUT_MS = 700;
 
 export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
   const [fadeOut, setFadeOut] = useState(false);
@@ -47,9 +47,11 @@ export function IntroScreen({ lang, onComplete }: IntroScreenProps) {
           src={introGif}
           alt=""
           fill
-          className="object-cover opacity-70 mix-blend-screen"
+          className="object-cover opacity-80"
           priority
+          sizes="100vw"
         />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.32),_transparent_65%),radial-gradient(circle_at_bottom,_rgba(15,118,110,0.4),_transparent_60%)] mix-blend-soft-light" />
       </div>
 
       <div className="relative z-10 flex flex-col items-center gap-4 px-6 text-center">

@@ -23,9 +23,19 @@ export function SocialProofSection({ lang }: SocialProofSectionProps) {
 
   const mainTestimonial = testimonials[0];
 
+  const accreditationClients = clients.filter(
+    (client) => client.category === "accreditation"
+  );
+  const serviceClients = clients.filter(
+    (client) => client.category === "services"
+  );
+  const trainingClients = clients.filter(
+    (client) => client.category === "training"
+  );
+
   return (
     <SectionLayout id="clients" title={title} subtitle={subtitle}>
-      <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+      <div className="grid gap-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1.2fr)]">
         <Card>
           <div className="space-y-3">
             <Text muted>
@@ -39,20 +49,64 @@ export function SocialProofSection({ lang }: SocialProofSectionProps) {
             </p>
           </div>
         </Card>
-        <div className="space-y-3">
-          <Text muted>
-            {lang === "pt" ? "Alguns clientes atendidos" : "Selected clients"}
-          </Text>
-          <LogoCloud>
-            {clients.map((client) => (
-              <div
-                key={client.id}
-                className="flex items-center justify-center rounded-xl border border-border bg-white px-3 py-3 text-xs font-medium text-slate-700 shadow-sm"
-              >
-                {client.label[lang]}
+        <div className="space-y-4">
+          <div>
+            <Text muted>
+              {lang === "pt"
+                ? "Laboratórios acreditados ISO/IEC 17025:2017"
+                : "ISO/IEC 17025 accredited laboratories"}
+            </Text>
+            <LogoCloud>
+              {accreditationClients.map((client) => (
+                <div
+                  key={client.id}
+                  className="flex items-center justify-center rounded-xl border border-border bg-white px-3 py-3 text-xs font-medium text-slate-700 shadow-sm"
+                >
+                  {client.label[lang]}
+                </div>
+              ))}
+            </LogoCloud>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card>
+              <div className="space-y-2">
+                <Text muted>
+                  {lang === "pt"
+                    ? "Empresas com contratos de serviços e consultoria"
+                    : "Companies with consulting and service engagements"}
+                </Text>
+                <LogoCloud>
+                  {serviceClients.map((client) => (
+                    <div
+                      key={client.id}
+                      className="flex items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-[11px] font-medium text-slate-700 shadow-sm"
+                    >
+                      {client.label[lang]}
+                    </div>
+                  ))}
+                </LogoCloud>
               </div>
-            ))}
-          </LogoCloud>
+            </Card>
+            <Card>
+              <div className="space-y-2">
+                <Text muted>
+                  {lang === "pt"
+                    ? "Organizações que confiaram nos treinamentos CTLI"
+                    : "Organizations trained by CTLI"}
+                </Text>
+                <LogoCloud>
+                  {trainingClients.map((client) => (
+                    <div
+                      key={client.id}
+                      className="flex items-center justify-center rounded-xl border border-border bg-white px-3 py-2 text-[11px] font-medium text-slate-700 shadow-sm"
+                    >
+                      {client.label[lang]}
+                    </div>
+                  ))}
+                </LogoCloud>
+              </div>
+            </Card>
+          </div>
         </div>
       </div>
     </SectionLayout>
