@@ -119,6 +119,93 @@ body.page-bg {
   }
 }
 
+/* Hero GIF: metade direita da viewport (borda esquerda no eixo 50%), entrada gradual; depois fica cheio na faixa */
+@keyframes hero-gif-reveal {
+  from {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0) scale(1.03);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes hero-gif-mask-open {
+  from {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 12%,
+      black 28%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 12%,
+      black 28%
+    );
+  }
+  to {
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 100%);
+    mask-image: linear-gradient(to right, black 0%, black 100%);
+  }
+}
+
+@keyframes hero-gif-inner-to-full {
+  from {
+    opacity: 0.22;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-gif-layer {
+  --hero-gif-reveal-delay: 0.4s;
+  --hero-gif-reveal-duration: 1.45s;
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 12%,
+    black 28%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.35) 12%,
+    black 28%
+  );
+  animation: hero-gif-reveal var(--hero-gif-reveal-duration)
+      cubic-bezier(0.22, 1, 0.36, 1) var(--hero-gif-reveal-delay) forwards,
+    hero-gif-mask-open 0.85s ease
+      calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration))
+      forwards;
+}
+
+.hero-gif-layer .hero-gif-inner {
+  opacity: 0.22;
+  animation: hero-gif-inner-to-full 0.75s ease
+    calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration))
+    forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-gif-layer {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    -webkit-mask-image: linear-gradient(to right, black 0%, black 100%);
+    mask-image: linear-gradient(to right, black 0%, black 100%);
+  }
+
+  .hero-gif-layer .hero-gif-inner {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 a {
   @apply text-primary underline-offset-4 hover:underline;
 }

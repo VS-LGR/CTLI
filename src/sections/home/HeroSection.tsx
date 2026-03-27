@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Badge } from "@/ui/Badge";
 import { Heading } from "@/ui/Heading";
 import { Text } from "@/ui/Text";
@@ -11,7 +10,7 @@ import {
   heroSecondaryWhatsAppMessages
 } from "@/config/company";
 import type { SupportedLang } from "@/lib/i18n";
-import introGif from "@/components/CTLI INTRo.gif";
+import { HeroIntroFreezeGif } from "@/components/HeroIntroFreezeGif";
 
 type HeroSectionProps = {
   lang: SupportedLang;
@@ -40,16 +39,13 @@ export function HeroSection({ lang }: HeroSectionProps) {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(56,189,248,0.18),transparent_50%),radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(15,118,110,0.12),transparent_55%)]"
         aria-hidden
       />
-      <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[min(52%,28rem)] opacity-[0.18] md:block lg:w-[min(45%,32rem)] lg:opacity-[0.2]">
-        <Image
-          src={introGif}
-          alt=""
-          fill
-          className="object-cover object-[center_30%]"
-          sizes="(max-width: 1024px) 40vw, 480px"
-          loading="lazy"
-          fetchPriority="low"
-        />
+      <div
+        className="hero-gif-layer pointer-events-none absolute inset-y-0 left-1/2 right-0 -z-10 hidden md:block"
+        aria-hidden
+      >
+        <div className="hero-gif-inner relative h-full w-full">
+          <HeroIntroFreezeGif />
+        </div>
       </div>
 
       <div className="relative mx-auto w-full max-w-[90rem] px-4 pb-14 pt-16 sm:px-6 sm:pb-16 sm:pt-20 md:px-8 md:pb-20 md:pt-24 lg:px-12 lg:pb-24 lg:pt-28">
