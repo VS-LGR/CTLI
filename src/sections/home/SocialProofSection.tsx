@@ -4,6 +4,7 @@ import { Text } from "@/ui/Text";
 import { LogoCloud } from "@/ui/LogoCloud";
 import { testimonials } from "@/config/testimonials";
 import { clients } from "@/config/clients";
+import { socialProofHighlight } from "@/config/company";
 import type { SupportedLang } from "@/lib/i18n";
 
 type SocialProofSectionProps = {
@@ -50,6 +51,9 @@ export function SocialProofSection({ lang }: SocialProofSectionProps) {
           </div>
         </Card>
         <div className="space-y-4">
+          <p className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-xs leading-relaxed text-slate-600 md:text-sm">
+            {socialProofHighlight[lang]}
+          </p>
           <div>
             <Text muted>
               {lang === "pt"

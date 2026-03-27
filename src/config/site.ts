@@ -26,8 +26,8 @@ export const siteConfig: SiteConfig = {
     en: "High-impact training and accreditation consulting solutions."
   },
   tagline: {
-    pt: "Especialistas em NORMA ABNT NBR ISO/IEC 17025:2017, calibração de balanças e emissão de certificados.",
-    en: "Experts in ISO/IEC 17025:2017, scale calibration and calibration certificates."
+    pt: "Especialistas em NORMA ABNT NBR ISO/IEC 17025:2017, metrologia de massas, pesos-padrão, calibração de balanças e certificados na RBC.",
+    en: "Experts in ISO/IEC 17025:2017, mass metrology, mass standards, balance calibration and RBC-aligned certificates."
   },
   email: "contato@ctli.com.br",
   whatsappDisplay: "(11) 97630-5363",

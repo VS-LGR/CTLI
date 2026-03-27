@@ -14,18 +14,17 @@ export const seoConfig: SeoConfig = {
   home: {
     pt: {
       title:
-        "CTLI | Consultoria ISO/IEC 17025, calibração de balanças e emissão de certificados",
+        "CTLI | Consultoria ISO/IEC 17025, metrologia, pesos-padrão e calibração de balanças | RBC",
       description:
-        "CTLI – Centro Tecnológico em Liderança e Inovação. Consultoria especializada em NORMA ABNT NBR ISO/IEC 17025:2017, calibração de balanças, treinamento de alto impacto e emissão de certificados de calibração.",
+        "CTLI — Centro Tecnológico em Liderança e Inovação. Consultoria ISO/IEC 17025:2017 para laboratórios de calibração de massas e balanças, treinamento técnico (metrologia, EURAMET CG-18, incerteza), manutenção de acreditação CGCRE/INMETRO na RBC e planilhas para certificados de calibração.",
       url: "https://www.ctli.com.br/"
     },
     en: {
       title:
-        "CTLI | ISO/IEC 17025 consulting, scale calibration and calibration certificates",
+        "CTLI | ISO/IEC 17025 consulting, metrology, mass standards and balance calibration | RBC",
       description:
-        "CTLI – Technological Center for Leadership and Innovation. Specialized consulting in ISO/IEC 17025:2017, scale calibration, high-impact training and calibration certificate issuance.",
+        "CTLI — Technological Center for Leadership and Innovation. ISO/IEC 17025:2017 consulting for mass and balance calibration laboratories, technical training (metrology, EURAMET CG-18, uncertainty), CGCRE/INMETRO accreditation maintenance in the RBC, and calibration certificate spreadsheets.",
       url: "https://www.ctli.com.br/en"
     }
   }
 };
-

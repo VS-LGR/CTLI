@@ -11,13 +11,12 @@ import { ContactSection } from "@/sections/home/ContactSection";
 import { isSupportedLang, type SupportedLang } from "@/lib/i18n";
 
 type LangPageProps = {
-  params: { lang: string };
+  params: Promise<{ lang: string }>;
 };
 
-export default function LangHomePage({ params }: LangPageProps) {
-  const lang: SupportedLang = isSupportedLang(params.lang)
-    ? params.lang
-    : "pt";
+export default async function LangHomePage({ params }: LangPageProps) {
+  const { lang: langParam } = await params;
+  const lang: SupportedLang = isSupportedLang(langParam) ? langParam : "pt";
 
   return (
     <>

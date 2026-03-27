@@ -3,6 +3,7 @@ import { Card } from "@/ui/Card";
 import { Heading } from "@/ui/Heading";
 import { Text } from "@/ui/Text";
 import { services } from "@/config/services";
+import { servicesSectionCopy } from "@/config/company";
 import type { SupportedLang } from "@/lib/i18n";
 
 type ServicesSectionProps = {
@@ -10,18 +11,12 @@ type ServicesSectionProps = {
 };
 
 export function ServicesSection({ lang }: ServicesSectionProps) {
-  const title =
-    lang === "pt"
-      ? "Serviços pensados para todo o ciclo da acreditação"
-      : "Services designed for the entire accreditation cycle";
-
-  const subtitle =
-    lang === "pt"
-      ? "Da capacitação da equipe à emissão de certificados de calibração, com foco total na NORMA ABNT NBR ISO/IEC 17025:2017."
-      : "From team training to calibration certificate issuance, fully aligned with ISO/IEC 17025:2017.";
-
   return (
-    <SectionLayout id="services" title={title} subtitle={subtitle}>
+    <SectionLayout
+      id="services"
+      title={servicesSectionCopy.title[lang]}
+      subtitle={servicesSectionCopy.subtitle[lang]}
+    >
       <div className="grid gap-6 md:grid-cols-2">
         {services.map((service) => (
           <Card key={service.id}>

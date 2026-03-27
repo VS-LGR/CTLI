@@ -22,21 +22,21 @@ export const trainingCategories: TrainingCategory[] = [
       en: "Metrology and Balance Calibration"
     },
     description: {
-      pt: "Capacitações para garantir rastreabilidade, incerteza de medição controlada e certificados consistentes em instrumentos de pesagem.",
-      en: "Training to ensure traceability, controlled measurement uncertainty and consistent certificates for weighing instruments."
+      pt: "Capacitações alinhadas a guias reconhecidos (como EURAMET Calibration Guide n.º 18) para rastreabilidade, pesos-padrão, calibração não automática e incerteza de medição em balanças.",
+      en: "Training aligned with recognized guides (such as EURAMET Calibration Guide No. 18) for traceability, mass standards, non-automatic weighing instrument calibration and measurement uncertainty."
     },
     examples: {
       pt: [
-        "Calibração de Balanças e Cálculo de Incerteza",
+        "Calibração de Balanças e Cálculo de Incerteza (CG-18)",
         "Curso de Calibração de Balanças",
         "Curso de Incerteza de Medição",
-        "Metrologia Básica"
+        "Metrologia Básica e Metrologia Aplicada à Pesagem"
       ],
       en: [
-        "Balance Calibration and Uncertainty Calculation",
+        "Balance Calibration and Uncertainty Calculation (CG-18)",
         "Balance Calibration Course",
         "Measurement Uncertainty Course",
-        "Basic Metrology"
+        "Basic Metrology and Applied Weighing Metrology"
       ]
     }
   },
@@ -47,8 +47,8 @@ export const trainingCategories: TrainingCategory[] = [
       en: "ISO Standards and Management Systems"
     },
     description: {
-      pt: "Formações para implementação, interpretação e manutenção de sistemas de gestão baseados em ISO 17025, ISO 9001, ISO 14001 e normas correlatas.",
-      en: "Training for implementation, interpretation and maintenance of management systems based on ISO 17025, ISO 9001, ISO 14001 and related standards."
+      pt: "Formações para implementação, interpretação e manutenção de sistemas de gestão — com foco em ISO/IEC 17025:2017 para laboratórios — e normas ISO 9001, ISO 14001, auditoria interna e documentação.",
+      en: "Training for implementation, interpretation and maintenance of management systems — with emphasis on ISO/IEC 17025:2017 for laboratories — plus ISO 9001, ISO 14001, internal auditing and documentation."
     },
     examples: {
       pt: [

@@ -23,19 +23,19 @@ export const services: Service[] = [
       en: "High-Impact Training"
     },
     description: {
-      pt: "Programas focados em resultados, alinhados às normas técnicas e à realidade dos laboratórios e empresas de pesagem.",
-      en: "Result-oriented training aligned with technical standards and the reality of laboratories and weighing companies."
+      pt: "Capacitação técnica para equipes que precisam aplicar normas e metrologia no dia a dia: ISO/IEC 17025, calibração de balanças, incerteza de medição, boas práticas de pesagem e normas correlatas.",
+      en: "Technical training for teams that must apply standards and metrology in daily work: ISO/IEC 17025, balance calibration, measurement uncertainty, good weighing practices and related standards."
     },
     highlights: {
       pt: [
-        "Conteúdo prático aplicado ao dia a dia",
-        "Ênfase em ISO/IEC 17025 e boas práticas de pesagem",
-        "Turmas in-company ou abertas"
+        "Metrologia e calibração alinhadas a guias como o EURAMET CG-18",
+        "Turmas presenciais, online ou in-company",
+        "Foco em resultados auditáveis e na competência do laboratório"
       ],
       en: [
-        "Practical content for day-to-day operations",
-        "Focus on ISO/IEC 17025 and good weighing practices",
-        "In-company or open classes"
+        "Metrology and calibration aligned with guides such as EURAMET CG-18",
+        "On-site, online or in-company classes",
+        "Focus on auditable results and laboratory competence"
       ]
     }
   },
@@ -46,19 +46,19 @@ export const services: Service[] = [
       en: "ISO/IEC 17025 Implementation and Accreditation"
     },
     description: {
-      pt: "Apoio completo para planejar, implementar e evidenciar a competência técnica exigida pela ISO/IEC 17025.",
-      en: "End-to-end support to plan, implement and demonstrate the technical competence required by ISO/IEC 17025."
+      pt: "Apoio completo para laboratórios de ensaio e calibração — com ênfase em massas, balanças e pesos-padrão — planejarem, implementarem e demonstrarem competência técnica perante a CGCRE/INMETRO na RBC.",
+      en: "End-to-end support for testing and calibration laboratories — with emphasis on mass, balances and mass standards — to plan, implement and demonstrate technical competence before CGCRE/INMETRO under the RBC."
     },
     highlights: {
       pt: [
-        "Diagnóstico do laboratório e plano de implantação",
-        "Desenho do sistema de gestão e da documentação técnica",
-        "Preparação para avaliações da CGCRE/INMETRO"
+        "Diagnóstico do laboratório e roteiro até a acreditação",
+        "Sistema de gestão, métodos e registro de evidências técnicas",
+        "Preparação para avaliações e desafios típicos da área de massa"
       ],
       en: [
-        "Laboratory diagnosis and implementation roadmap",
-        "Design of management system and technical documentation",
-        "Preparation for CGCRE/INMETRO assessments"
+        "Laboratory diagnosis and roadmap to accreditation",
+        "Management system, methods and technical evidence records",
+        "Preparation for assessments and typical mass-metrology challenges"
       ]
     }
   },
@@ -69,19 +69,19 @@ export const services: Service[] = [
       en: "Specialized Consulting"
     },
     description: {
-      pt: "Consultoria para implementação, adequação e melhoria de sistemas de gestão em laboratórios e empresas de pesagem.",
-      en: "Consulting for implementation and improvement of management systems in laboratories and weighing companies."
+      pt: "Consultoria presencial ou online para transformar requisitos normativos em processos eficientes: da pesagem industrial a laboratórios acreditados, com foco em metrologia, qualidade e continuidade de negócio.",
+      en: "On-site or online consulting to turn standard requirements into efficient processes: from industrial weighing to accredited laboratories, focusing on metrology, quality and business continuity."
     },
     highlights: {
       pt: [
-        "Mapeamento de processos críticos",
-        "Apoio em auditorias internas e externas",
-        "Planos de ação orientados a resultados"
+        "Modalidade remota para implantação na área de massa (ISO 17025)",
+        "Mapeamento de riscos e priorização de ações",
+        "Apoio em auditorias internas e interação com partes interessadas"
       ],
       en: [
-        "Critical process mapping",
-        "Support during internal and external audits",
-        "Result-driven action plans"
+        "Remote mode for mass-metrology ISO 17025 implementation",
+        "Risk mapping and action prioritization",
+        "Support during internal audits and stakeholder interactions"
       ]
     }
   },
@@ -92,19 +92,19 @@ export const services: Service[] = [
       en: "Accreditation Maintenance"
     },
     description: {
-      pt: "Sistema estruturado para manter a conformidade com a NORMA ABNT NBR ISO/IEC 17025:2017.",
-      en: "Structured system to maintain compliance with ISO/IEC 17025:2017."
+      pt: "Programa estruturado para manter a conformidade com a NORMA ABNT NBR ISO/IEC 17025:2017 e com as exigências do INMETRO após a concessão da acreditação.",
+      en: "Structured program to maintain compliance with ISO/IEC 17025:2017 and INMETRO requirements after accreditation is granted."
     },
     highlights: {
       pt: [
-        "Gestão de documentação e registros",
-        "Acompanhamento de ações corretivas",
-        "Atualização contínua frente às exigências do INMETRO"
+        "Gestão de documentação, auditorias internas e ações corretivas",
+        "Qualificação de fornecedores e atualização técnica contínua",
+        "Alinhamento às mudanças interpretativas e regulatórias da CGCRE"
       ],
       en: [
-        "Documentation and records management",
-        "Corrective action follow-up",
-        "Continuous updates to meet INMETRO requirements"
+        "Documentation management, internal audits and corrective actions",
+        "Supplier qualification and ongoing technical updates",
+        "Alignment with CGCRE regulatory and interpretive changes"
       ]
     }
   },
@@ -115,19 +115,19 @@ export const services: Service[] = [
       en: "Calibration Certificate Issuance"
     },
     description: {
-      pt: "Planilhas e sistemas que automatizam cálculos de incerteza e padronizam certificados de calibração.",
-      en: "Spreadsheets and systems that automate uncertainty calculations and standardize calibration certificates."
+      pt: "Planilhas e fluxos para emissão de certificados de calibração de balanças com apoio à rastreabilidade e à NBR ISO/IEC 17025 — incluindo opção manual com automação de incerteza e versão mais automatizada para agilidade.",
+      en: "Spreadsheets and workflows for balance calibration certificate issuance supporting traceability and ISO/IEC 17025 — including manual entry with automated uncertainty and a more automated version for speed."
     },
     highlights: {
       pt: [
-        "Cálculo automatizado de incerteza",
-        "Emissão rápida e padronizada",
-        "Redução de erros manuais"
+        "Cadastros de clientes, balanças, pesos-padrão e periodicidade",
+        "Cálculo de incerteza com menor retrabalho manual",
+        "Layout e campos pensados para laboratórios da RBC"
       ],
       en: [
-        "Automated uncertainty calculation",
-        "Fast, standardized issuance",
-        "Reduced manual errors"
+        "Records for clients, balances, mass standards and periodicity",
+        "Uncertainty calculation with less manual rework",
+        "Layouts and fields designed for RBC-oriented laboratories"
       ]
     }
   },
@@ -138,21 +138,20 @@ export const services: Service[] = [
       en: "Projects in Quality, Environment and OHS"
     },
     description: {
-      pt: "Projetos técnicos sob medida para integrar qualidade, meio ambiente e segurança do trabalho à estratégia do negócio.",
-      en: "Tailored technical projects to align quality, environment and occupational health and safety with business strategy."
+      pt: "Projetos integrados quando a estratégia da empresa exige combinar acreditação técnica com ISO 9001, ISO 14001, segurança do trabalho ou outras bases normativas.",
+      en: "Integrated projects when strategy requires combining technical accreditation with ISO 9001, ISO 14001, occupational safety or other standard frameworks."
     },
     highlights: {
       pt: [
-        "Sistemas de gestão integrados",
-        "Mapeamento de riscos e controles operacionais",
-        "Adequação a requisitos legais e normativos"
+        "Sistemas de gestão integrados ao laboratório ou à operação",
+        "Conformidade legal e melhoria contínua",
+        "Soluções sob medida para cada realidade"
       ],
       en: [
-        "Integrated management systems",
-        "Risk mapping and operational controls",
-        "Compliance with legal and standard requirements"
+        "Management systems integrated with laboratory or operations",
+        "Legal compliance and continuous improvement",
+        "Tailored solutions for each context"
       ]
     }
   }
 ];
-
