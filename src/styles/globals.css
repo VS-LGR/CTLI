@@ -119,7 +119,7 @@ body.page-bg {
   }
 }
 
-/* Hero GIF: metade direita (50%), entrada suave; opacidade baixa para não competir com o texto */
+/* Hero GIF: metade direita (50%), entrada suave; ~10% opacidade no conteúdo */
 @keyframes hero-gif-reveal {
   from {
     opacity: 0;
@@ -169,10 +169,10 @@ body.page-bg {
 
 @keyframes hero-gif-inner-to-full {
   from {
-    opacity: 0.14;
+    opacity: 0;
   }
   to {
-    opacity: 0.4;
+    opacity: 0.1;
   }
 }
 
@@ -200,7 +200,7 @@ body.page-bg {
 }
 
 .hero-gif-layer .hero-gif-inner {
-  opacity: 0.14;
+  opacity: 0;
   animation: hero-gif-inner-to-full 0.9s ease
     calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration))
     forwards;
@@ -231,7 +231,7 @@ body.page-bg {
 
   .hero-gif-layer .hero-gif-inner {
     animation: none;
-    opacity: 0.4;
+    opacity: 0.1;
   }
 }
 
