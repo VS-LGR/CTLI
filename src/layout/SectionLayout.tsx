@@ -16,17 +16,19 @@ export function SectionLayout({
 }: SectionLayoutProps) {
   return (
     <SectionContainer id={id}>
-      <div className="space-y-10">
-        <div className="max-w-2xl space-y-3">
+      <div className="space-y-8 sm:space-y-10">
+        <div className="max-w-3xl space-y-3 sm:space-y-4">
           {typeof title === "string" ? (
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
+            <h2 className="text-[1.375rem] font-semibold leading-snug tracking-tight text-foreground sm:text-2xl md:text-3xl">
               {title}
             </h2>
           ) : (
             title
           )}
           {subtitle ? (
-            <p className="text-sm md:text-base text-slate-500">{subtitle}</p>
+            <p className="text-[15px] leading-relaxed text-slate-600 sm:text-base md:text-lg">
+              {subtitle}
+            </p>
           ) : null}
         </div>
         {children}

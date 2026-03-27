@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { SectionContainer } from "@/ui/SectionContainer";
 import { Badge } from "@/ui/Badge";
 import { Heading } from "@/ui/Heading";
 import { Text } from "@/ui/Text";
@@ -19,88 +18,137 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ lang }: HeroSectionProps) {
+  const deliverables =
+    lang === "pt"
+      ? [
+          "ISO/IEC 17025 na RBC (documentação e CGCRE/INMETRO)",
+          "Treinamentos: balanças, incerteza, normas",
+          "Planilhas para certificados de calibração"
+        ]
+      : [
+          "ISO/IEC 17025 in the RBC (documentation and CGCRE/INMETRO)",
+          "Training: balances, uncertainty, standards",
+          "Spreadsheets for calibration certificates"
+        ];
+
   return (
-    <SectionContainer id="hero">
-      <div className="relative overflow-hidden rounded-3xl bg-slate-950 px-6 py-10 text-slate-50 shadow-lg ring-1 ring-slate-900/40 md:px-10 md:py-14">
-        <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 h-80 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.3),_transparent_60%)]" />
-        {/* GIF decorativo: lazy + baixa prioridade de fetch para não competir com o LCP; futuro: poster WebP estático ou asset otimizado em /public */}
-        <div className="pointer-events-none absolute inset-y-0 right-[-10%] -z-20 hidden w-1/2 opacity-25 md:block">
-          <Image
-            src={introGif}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="50vw"
-            loading="lazy"
-            fetchPriority="low"
-          />
-        </div>
-        <div className="relative grid items-center gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
-          <div className="space-y-6">
-            <Badge>{heroCopy.badge[lang]}</Badge>
-            <Heading level={1}>{heroCopy.headline[lang]}</Heading>
-            <Text muted={false}>{heroCopy.subline[lang]}</Text>
-            <p className="text-xs text-slate-400 md:text-sm">{heroCopy.trustLine[lang]}</p>
-            <div className="flex flex-col gap-3 pt-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <a href={buildWhatsAppUrl(heroWhatsAppMessages[lang])}>
-                <Button size="lg">{heroCtaLabels.primary[lang]}</Button>
+    <section
+      id="hero"
+      className="relative isolate w-full overflow-hidden bg-slate-950 text-slate-50"
+    >
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-20%,rgba(56,189,248,0.18),transparent_50%),radial-gradient(ellipse_80%_50%_at_100%_50%,rgba(15,118,110,0.12),transparent_55%)]"
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 hidden w-[min(52%,28rem)] opacity-[0.18] md:block lg:w-[min(45%,32rem)] lg:opacity-[0.2]">
+        <Image
+          src={introGif}
+          alt=""
+          fill
+          className="object-cover object-[center_30%]"
+          sizes="(max-width: 1024px) 40vw, 480px"
+          loading="lazy"
+          fetchPriority="low"
+        />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-[90rem] px-4 pb-14 pt-16 sm:px-6 sm:pb-16 sm:pt-20 md:px-8 md:pb-20 md:pt-24 lg:px-12 lg:pb-24 lg:pt-28">
+        <div className="grid items-start gap-10 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] md:gap-12 lg:items-center lg:gap-16">
+          <div className="min-w-0 space-y-4 sm:space-y-5">
+            <Badge className="border-sky-400/35 bg-sky-500/15 text-[11px] font-semibold uppercase tracking-wider text-sky-100 sm:text-xs">
+              {heroCopy.badge[lang]}
+            </Badge>
+            <Heading
+              level={1}
+              className="max-w-4xl text-balance text-white lg:max-w-5xl"
+            >
+              {heroCopy.headline[lang]}
+            </Heading>
+            <Text
+              inverted
+              className="max-w-2xl text-[15px] sm:text-base lg:text-lg lg:leading-relaxed"
+            >
+              {heroCopy.subline[lang]}
+            </Text>
+            <p className="max-w-xl text-xs leading-relaxed text-slate-400 sm:text-sm">
+              {heroCopy.trustLine[lang]}
+            </p>
+            <ul className="md:hidden">
+              {deliverables.map((line) => (
+                <li
+                  key={line}
+                  className="border-l-2 border-sky-500/50 py-1 pl-3 text-xs leading-snug text-slate-300 first:pt-0 last:pb-0"
+                >
+                  {line}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-3">
+              <a
+                href={buildWhatsAppUrl(heroWhatsAppMessages[lang])}
+                className="w-full sm:w-auto"
+              >
+                <Button size="lg" className="w-full sm:w-auto">
+                  {heroCtaLabels.primary[lang]}
+                </Button>
               </a>
               <a
                 href={buildWhatsAppUrl(heroSecondaryWhatsAppMessages[lang])}
-                className="text-sm font-medium text-sky-300 underline-offset-4 hover:text-sky-200 hover:underline"
+                className="text-center text-sm font-medium text-sky-300 underline-offset-4 sm:text-left hover:text-sky-200 hover:underline"
               >
                 {heroCtaLabels.secondary[lang]}
               </a>
               <a
                 href="#trainings"
-                className="text-sm font-medium text-slate-400 underline-offset-4 hover:text-slate-200 hover:underline"
+                className="text-center text-sm font-medium text-slate-400 underline-offset-4 sm:text-left hover:text-slate-200 hover:underline"
               >
                 {heroCtaLabels.tertiaryAnchor[lang]}
               </a>
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="rounded-2xl border border-slate-800/80 bg-slate-900/60 p-6 shadow-inner">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300">
+
+          <div className="hidden min-w-0 md:block">
+            <div className="border-l border-slate-700/60 pl-8 lg:pl-10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-300">
                 {lang === "pt"
                   ? "O que a CTLI resolve"
                   : "What CTLI delivers"}
               </p>
-              <dl className="mt-4 space-y-3 text-sm text-slate-200/90">
+              <dl className="mt-6 space-y-6 text-sm">
                 <div>
-                  <dt className="font-semibold">
+                  <dt className="font-semibold text-slate-100">
                     {lang === "pt"
-                      ? "Implantação e manutenção da ISO/IEC 17025 (RBC/CGCRE)"
-                      : "ISO/IEC 17025 implementation and maintenance (RBC/CGCRE)"}
+                      ? "ISO/IEC 17025 na RBC (CGCRE/INMETRO)"
+                      : "ISO/IEC 17025 in the RBC (CGCRE/INMETRO)"}
                   </dt>
-                  <dd className="text-slate-300/80">
+                  <dd className="mt-1.5 text-[13px] leading-relaxed text-slate-400">
                     {lang === "pt"
-                      ? "Documentação, evidências técnicas e preparação para avaliações do INMETRO."
-                      : "Documentation, technical evidence and preparation for INMETRO assessments."}
+                      ? "Documentação, evidências técnicas e preparação para avaliações."
+                      : "Documentation, technical evidence and assessment readiness."}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-semibold">
+                  <dt className="font-semibold text-slate-100">
                     {lang === "pt"
                       ? "Treinamentos em metrologia e normas"
-                      : "Training in metrology and standards"}
+                      : "Metrology and standards training"}
                   </dt>
-                  <dd className="text-slate-300/80">
+                  <dd className="mt-1.5 text-[13px] leading-relaxed text-slate-400">
                     {lang === "pt"
-                      ? "Calibração de balanças (EURAMET CG-18), incerteza, ISO 17025 e boas práticas de pesagem."
-                      : "Balance calibration (EURAMET CG-18), uncertainty, ISO 17025 and good weighing practices."}
+                      ? "Calibração de balanças (EURAMET CG-18), incerteza e boas práticas de pesagem."
+                      : "Balance calibration (EURAMET CG-18), uncertainty and good weighing practices."}
                   </dd>
                 </div>
                 <div>
-                  <dt className="font-semibold">
+                  <dt className="font-semibold text-slate-100">
                     {lang === "pt"
-                      ? "Certificados de calibração de balanças"
-                      : "Balance calibration certificates"}
+                      ? "Certificados de calibração"
+                      : "Calibration certificates"}
                   </dt>
-                  <dd className="text-slate-300/80">
+                  <dd className="mt-1.5 text-[13px] leading-relaxed text-slate-400">
                     {lang === "pt"
-                      ? "Planilhas com incerteza automatizada e opção de fluxo manual ou altamente automatizado."
-                      : "Spreadsheets with automated uncertainty and manual or highly automated workflows."}
+                      ? "Planilhas com incerteza automatizada — fluxo manual ou mais automatizado."
+                      : "Spreadsheets with automated uncertainty — manual or streamlined workflows."}
                   </dd>
                 </div>
               </dl>
@@ -108,6 +156,6 @@ export function HeroSection({ lang }: HeroSectionProps) {
           </div>
         </div>
       </div>
-    </SectionContainer>
+    </section>
   );
 }

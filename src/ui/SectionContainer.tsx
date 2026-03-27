@@ -12,7 +12,7 @@ export function SectionContainer({
   className
 }: SectionContainerProps) {
   const base =
-    "w-full px-5 py-16 md:py-20 lg:py-24 mx-auto max-w-6xl";
+    "w-full px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-24 mx-auto max-w-6xl xl:max-w-7xl";
   const classes = `${base} ${className ?? ""}`;
 
   return (

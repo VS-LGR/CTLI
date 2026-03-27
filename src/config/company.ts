@@ -9,8 +9,8 @@ export const companyFacts = {
 
 /** Prudent wording aligned with official site claim on mass calibration labs. */
 export const socialProofHighlight: Multilang = {
-  pt: "Histórico de participação em projetos de acreditação na área de calibração de massas junto a uma parcela expressiva dos laboratórios acreditados no Brasil — números divulgados no site institucional da CTLI.",
-  en: "Track record supporting accreditation projects in mass calibration alongside a significant share of accredited laboratories in Brazil — as stated on CTLI’s institutional website."
+  pt: "Participação relevante em projetos de acreditação na calibração de massas no Brasil — alinhado ao histórico divulgado no site da CTLI.",
+  en: "Significant involvement in mass-calibration accreditation projects across Brazil — consistent with CTLI’s published track record."
 };
 
 export const heroCopy = {
@@ -19,12 +19,12 @@ export const heroCopy = {
     en: "Metrology, mass standards, balances and ISO/IEC 17025"
   },
   headline: {
-    pt: "Consultoria e treinamento para laboratórios de massas e empresas de pesagem que precisam de acreditação e certificados à altura da RBC.",
-    en: "Consulting and training for mass laboratories and weighing companies that need accreditation and certificates aligned with the RBC."
+    pt: "Acreditação ISO/IEC 17025, metrologia de massas e certificados para laboratórios e pesagem.",
+    en: "ISO/IEC 17025 accreditation, mass metrology and certificates for labs and weighing."
   },
   subline: {
-    pt: "Da calibração de balanças e pesos-padrão à ISO/IEC 17025 — com consultoria presencial ou online na área de massa, treinamentos técnicos e planilhas para emissão de certificados.",
-    en: "From balance and mass-standard calibration to ISO/IEC 17025 — with on-site or online consulting in mass metrology, technical training and spreadsheets for certificate issuance."
+    pt: "Balanças, pesos-padrão e RBC: consultoria presencial ou online, treinamento técnico e planilhas para certificados de calibração.",
+    en: "Balances, mass standards and the RBC: on-site or online consulting, technical training and calibration certificate spreadsheets."
   },
   trustLine: {
     pt: "Grupo fundado em 2012, com mais de 20 anos de experiência em normas técnicas e metrologia.",
@@ -63,17 +63,17 @@ export const aboutSectionCopy = {
     en: "CTLI: metrology, accreditation and technical training"
   },
   subtitle: {
-    pt: "Laboratórios de calibração de massas, balanças e empresas que precisam de competência comprovável perante CGCRE/INMETRO e clientes.",
-    en: "Mass calibration laboratories, balances and companies that need demonstrable competence before CGCRE/INMETRO and customers."
+    pt: "Quem calibra massas e balanças e precisa demonstrar competência perante CGCRE, INMETRO e clientes.",
+    en: "For teams calibrating mass and balances who must demonstrate competence to CGCRE, INMETRO and customers."
   },
   paragraphs: [
     {
-      pt: "Fundado em 2012, o Grupo CTLI reúne mais de 20 anos de experiência na implementação de normas técnicas, com foco em laboratórios de calibração de massas, pesos-padrão e balanças, e na NORMA ABNT NBR ISO/IEC 17025:2017. Apoiamos desde o diagnóstico até a manutenção da acreditação na Rede Brasileira de Calibração (RBC), com linguagem clara e entregas priorizadas.",
-      en: "Founded in 2012, CTLI Group brings 20+ years of experience implementing technical standards, focused on mass calibration laboratories, mass standards and balances, and ISO/IEC 17025:2017. We support from diagnosis through maintaining accreditation in the Brazilian Calibration Network (RBC), with clear language and prioritized deliverables."
+      pt: "Desde 2012, o Grupo CTLI soma mais de 20 anos em normas técnicas e metrologia. Foco em laboratórios de massas, pesos-padrão, balanças e na ABNT NBR ISO/IEC 17025:2017 — do diagnóstico à manutenção da acreditação na RBC.",
+      en: "Since 2012, CTLI Group has 20+ years in technical standards and metrology. We focus on mass labs, mass standards, balances and ISO/IEC 17025:2017 — from diagnosis to maintaining RBC accreditation."
     },
     {
-      pt: "Oferecemos consultoria especializada presencial e online (incluindo modalidade remota para implantação na área de massa), treinamento de alto impacto, manutenção de acreditação conforme exigências do INMETRO e soluções para emissão de certificados — planilha com preenchimento manual e automação de incerteza, ou planilha automatizada para fluxo mais rápido e padronizado.",
-      en: "We provide specialized on-site and online consulting (including remote implementation support in mass metrology), high-impact training, accreditation maintenance aligned with INMETRO requirements, and certificate issuance solutions — manual spreadsheet with automated uncertainty, or a more automated spreadsheet for faster, standardized workflows."
+      pt: "Consultoria presencial e online (incluindo implantação na área de massa), treinamentos, manutenção de acreditação junto ao INMETRO e planilhas para certificados — manual com incerteza automatizada ou fluxo mais automatizado.",
+      en: "On-site and online consulting (including mass-scope implementation), training, INMETRO-aligned accreditation maintenance, and certificate spreadsheets — manual with automated uncertainty or a more automated flow."
     }
   ] as const,
   bullets: {
@@ -103,7 +103,7 @@ export const servicesSectionCopy = {
     en: "Services for the full cycle: from training to certificates"
   },
   subtitle: {
-    pt: "Treinamento de alto impacto, consultoria ISO/IEC 17025 (presencial ou online na área de massa), manutenção de acreditação junto ao INMETRO e planilhas para emissão de certificados de calibração de balanças.",
-    en: "High-impact training, ISO/IEC 17025 consulting (on-site or online in mass metrology), accreditation maintenance with INMETRO, and spreadsheets for balance calibration certificates."
+    pt: "Treinamento, consultoria ISO/IEC 17025 (presencial ou online em massa), manutenção de acreditação e planilhas para certificados de balanças.",
+    en: "Training, ISO/IEC 17025 consulting (on-site or online in mass), accreditation maintenance and spreadsheets for balance certificates."
   }
 } as const;

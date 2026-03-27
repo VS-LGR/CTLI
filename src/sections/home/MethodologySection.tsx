@@ -33,16 +33,18 @@ export function MethodologySection({ lang }: MethodologySectionProps) {
 
   return (
     <SectionLayout id="methodology" title={title} subtitle={subtitle}>
-      <ol className="grid gap-4 md:grid-cols-2">
+      <ol className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2">
         {steps.map((step, index) => (
           <li
             key={step}
-            className="flex items-start gap-3 rounded-2xl border border-border bg-slate-50 p-4"
+            className="flex items-start gap-3 rounded-2xl border border-border bg-slate-50 p-4 sm:p-5"
           >
-            <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
+            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">
               {index + 1}
             </span>
-            <p className="text-sm text-slate-700">{step}</p>
+            <p className="min-w-0 text-[14px] leading-relaxed text-slate-700 sm:text-[15px]">
+              {step}
+            </p>
           </li>
         ))}
       </ol>

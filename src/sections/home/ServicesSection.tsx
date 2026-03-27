@@ -17,13 +17,15 @@ export function ServicesSection({ lang }: ServicesSectionProps) {
       title={servicesSectionCopy.title[lang]}
       subtitle={servicesSectionCopy.subtitle[lang]}
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:gap-6 lg:grid-cols-2">
         {services.map((service) => (
           <Card key={service.id}>
-            <div className="space-y-3">
-              <Heading level={3}>{service.title[lang]}</Heading>
-              <Text>{service.description[lang]}</Text>
-              <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-slate-600">
+            <div className="flex h-full flex-col gap-3 sm:gap-4">
+              <Heading level={3} className="text-balance">
+                {service.title[lang]}
+              </Heading>
+              <Text muted>{service.description[lang]}</Text>
+              <ul className="mt-auto list-disc space-y-2 pl-5 text-[14px] leading-snug text-slate-600 sm:text-sm">
                 {service.highlights[lang].map((item) => (
                   <li key={item}>{item}</li>
                 ))}

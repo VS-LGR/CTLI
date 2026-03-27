@@ -19,16 +19,16 @@ export function FAQSection({ lang }: FAQSectionProps) {
 
   return (
     <SectionLayout id="faq" title={title} subtitle={subtitle}>
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {faqItems.map((item) => (
           <details
             key={item.id}
-            className="group rounded-2xl border border-border bg-slate-50 p-4"
+            className="group rounded-2xl border border-border bg-slate-50 p-4 sm:p-5"
           >
-            <summary className="cursor-pointer text-sm font-medium text-slate-800">
+            <summary className="cursor-pointer list-none text-[15px] font-medium leading-snug text-slate-900 marker:content-none sm:text-base [&::-webkit-details-marker]:hidden">
               {item.question[lang]}
             </summary>
-            <p className="mt-2 text-sm text-slate-600">
+            <p className="mt-3 text-[14px] leading-relaxed text-slate-600 sm:text-[15px]">
               {item.answer[lang]}
             </p>
           </details>
