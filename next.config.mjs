@@ -1,9 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /**
-   * Strict Mode remonta efeitos em dev e faz o GIF do hero reiniciar (segundo play).
-   * Com false, o GIF corre uma vez e o congelamento no último frame mantém-se alinhado ao timer.
-   */
+  /** Evita remontagem dupla em dev, que reinicia o GIF antes do snapshot. */
   reactStrictMode: false,
   images: {
     remotePatterns: [

@@ -119,15 +119,15 @@ body.page-bg {
   }
 }
 
-/* Hero GIF: metade direita (50%), entrada suave; ~10% opacidade no conteúdo */
+/* Hero GIF: metade direita, entrada curta; conteúdo final ~10% opacidade (esmaecido) */
 @keyframes hero-gif-reveal {
   from {
     opacity: 0;
-    transform: translate3d(20px, 0, 0) scale(1.03);
+    transform: translate3d(12px, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -136,18 +136,17 @@ body.page-bg {
     -webkit-mask-image: linear-gradient(
       to right,
       transparent 0%,
-      rgba(0, 0, 0, 0.35) 12%,
-      black 28%
+      rgba(0, 0, 0, 0.4) 14%,
+      black 30%
     );
     mask-image: linear-gradient(
       to right,
       transparent 0%,
-      rgba(0, 0, 0, 0.35) 12%,
-      black 28%
+      rgba(0, 0, 0, 0.4) 14%,
+      black 30%
     );
   }
   to {
-    /* Transição suave junto ao texto: sem faixa 100% opaca na borda esquerda */
     -webkit-mask-image: linear-gradient(
       to right,
       transparent 0%,
@@ -167,7 +166,7 @@ body.page-bg {
   }
 }
 
-@keyframes hero-gif-inner-to-full {
+@keyframes hero-gif-inner-fade {
   from {
     opacity: 0;
   }
@@ -177,32 +176,32 @@ body.page-bg {
 }
 
 .hero-gif-layer {
-  --hero-gif-reveal-delay: 0.4s;
-  --hero-gif-reveal-duration: 1.45s;
+  --hero-gif-reveal-delay: 0.15s;
+  --hero-gif-reveal-duration: 0.65s;
   opacity: 0;
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    rgba(0, 0, 0, 0.35) 12%,
-    black 28%
+    rgba(0, 0, 0, 0.4) 14%,
+    black 30%
   );
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    rgba(0, 0, 0, 0.35) 12%,
-    black 28%
+    rgba(0, 0, 0, 0.4) 14%,
+    black 30%
   );
-  animation: hero-gif-reveal var(--hero-gif-reveal-duration)
-      cubic-bezier(0.22, 1, 0.36, 1) var(--hero-gif-reveal-delay) forwards,
-    hero-gif-mask-open 0.85s ease
+  animation: hero-gif-reveal var(--hero-gif-reveal-duration) ease-out
+      var(--hero-gif-reveal-delay) forwards,
+    hero-gif-mask-open 0.5s ease
       calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration))
       forwards;
 }
 
 .hero-gif-layer .hero-gif-inner {
   opacity: 0;
-  animation: hero-gif-inner-to-full 0.9s ease
-    calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration))
+  animation: hero-gif-inner-fade 0.55s ease
+    calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration) + 0.05s)
     forwards;
 }
 

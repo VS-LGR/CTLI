@@ -1,12 +1,11 @@
 "use client";
 
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import {
   heroGifGetServerSnapshot,
   heroGifGetSrc,
   heroGifNotifyLoaded,
   heroGifRegisterImg,
-  heroGifStartBlobPlayback,
   heroGifSubscribe
 } from "@/lib/heroGifFreeze";
 
@@ -17,20 +16,12 @@ export function HeroIntroFreezeGif() {
     heroGifGetServerSnapshot
   );
 
-  useEffect(() => {
-    heroGifStartBlobPlayback();
-  }, []);
-
   const setImgRef = useCallback((el: HTMLImageElement | null) => {
     heroGifRegisterImg(el);
   }, []);
 
-  if (!src) {
-    return <div className="absolute inset-0 bg-transparent" aria-hidden />;
-  }
-
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- drawImage + troca para PNG após um loop
+    // eslint-disable-next-line @next/next/no-img-element -- snapshot para PNG após um loop
     <img
       ref={setImgRef}
       src={src}
