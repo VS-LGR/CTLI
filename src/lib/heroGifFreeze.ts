@@ -1,7 +1,7 @@
 import introGif from "@/components/CTLI INTRo.gif";
 import { HERO_INTRO_GIF_LOOP_MS } from "@/config/heroIntroGifMeta";
 
-/** URL do asset empacotado (snapshot estável para SSR/hidratação). */
+/** URL empacotada pelo bundler (usada só para fetch completo ou fallback). */
 export const HERO_INTRO_GIF_BUNDLE_SRC =
   typeof introGif === "string" ? introGif : introGif.src;
 
@@ -15,9 +15,16 @@ type Listener = () => void;
 let frozenSrc: string | null = null;
 const listeners = new Set<Listener>();
 
-/** Último <img> registado: mantido após unmount para o timer do Strict Mode ainda conseguir capturar. */
-let activeImg: HTMLImageElement | null = null;
+/**
+ * URL mostrada no <img> antes do PNG: blob: após fetch integral (recomendado) ou a URL do bundle em fallback.
+ * O fetch→blob evita o browser animar dados parciais e reiniciar quando o ficheiro grande termina (parece 2 plays).
+ */
+let playbackUrl: string | null = null;
+let playbackIsObjectUrl = false;
 
+let blobFetchStarted = false;
+
+let activeImg: HTMLImageElement | null = null;
 let freezeScheduled = false;
 let timerId: number | null = null;
 
@@ -33,9 +40,27 @@ function readWindowCache(): void {
   }
 }
 
+function revokePlayback() {
+  if (playbackUrl && playbackIsObjectUrl) {
+    try {
+      URL.revokeObjectURL(playbackUrl);
+    } catch {
+      /* ok */
+    }
+  }
+  playbackUrl = null;
+  playbackIsObjectUrl = false;
+}
+
 export function heroGifGetSrc(): string {
   readWindowCache();
-  return frozenSrc ?? HERO_INTRO_GIF_BUNDLE_SRC;
+  if (frozenSrc) return frozenSrc;
+  return playbackUrl ?? "";
+}
+
+/** SSR / hidratação: sem URL até o blob estar pronto no cliente. */
+export function heroGifGetServerSnapshot(): string {
+  return "";
 }
 
 export function heroGifSubscribe(onChange: Listener): () => void {
@@ -43,9 +68,45 @@ export function heroGifSubscribe(onChange: Listener): () => void {
   return () => listeners.delete(onChange);
 }
 
-/** Só actualiza quando há elemento novo; não limpa em unmount (evita perder referência durante Strict Mode). */
 export function heroGifRegisterImg(el: HTMLImageElement | null) {
   if (el) activeImg = el;
+}
+
+/**
+ * Inicia download completo do GIF e só então expõe `blob:` no <img>.
+ * Chamada única no mount do componente (cliente).
+ */
+export function heroGifStartBlobPlayback(): void {
+  if (typeof window === "undefined") return;
+  readWindowCache();
+  if (frozenSrc || playbackUrl || blobFetchStarted) return;
+  blobFetchStarted = true;
+
+  fetch(HERO_INTRO_GIF_BUNDLE_SRC)
+    .then((res) => {
+      if (!res.ok) throw new Error(String(res.status));
+      return res.blob();
+    })
+    .then((blob) => {
+      revokePlayback();
+      playbackUrl = URL.createObjectURL(blob);
+      playbackIsObjectUrl = true;
+      emit();
+    })
+    .catch(() => {
+      playbackUrl = HERO_INTRO_GIF_BUNDLE_SRC;
+      playbackIsObjectUrl = false;
+      emit();
+    });
+}
+
+function armTimer() {
+  const ms = Math.max(0, HERO_INTRO_GIF_LOOP_MS - CAPTURE_SLACK_MS);
+  if (timerId !== null) window.clearTimeout(timerId);
+  timerId = window.setTimeout(() => {
+    timerId = null;
+    requestAnimationFrame(() => requestAnimationFrame(runSnapshot));
+  }, ms);
 }
 
 function runSnapshot() {
@@ -58,7 +119,10 @@ function runSnapshot() {
     freezeScheduled = false;
     return;
   }
-  if (!img.complete || img.naturalWidth < 1) return;
+  if (!img.complete || img.naturalWidth < 1) {
+    freezeScheduled = false;
+    return;
+  }
   if (img.src.startsWith("data:image/")) return;
 
   const w = img.naturalWidth;
@@ -88,24 +152,12 @@ function runSnapshot() {
     frozenSrc = url;
     (window as FrozenWindow).__CTLI_HERO_GIF_FROZEN__ = url;
     emit();
+    queueMicrotask(() => revokePlayback());
   } catch {
     freezeScheduled = false;
   }
 }
 
-function armTimer() {
-  const ms = Math.max(0, HERO_INTRO_GIF_LOOP_MS - CAPTURE_SLACK_MS);
-  if (timerId !== null) window.clearTimeout(timerId);
-  timerId = window.setTimeout(() => {
-    timerId = null;
-    requestAnimationFrame(() => requestAnimationFrame(runSnapshot));
-  }, ms);
-}
-
-/**
- * Chamado uma vez por ciclo de vida útil do GIF (onLoad).
- * Garante um único agendamento global — mesmo com remounts do React.
- */
 export function heroGifNotifyLoaded() {
   readWindowCache();
   if (frozenSrc) {
@@ -116,10 +168,21 @@ export function heroGifNotifyLoaded() {
   if (freezeScheduled) return;
   freezeScheduled = true;
 
+  const img = activeImg;
+  if (!img) {
+    freezeScheduled = false;
+    return;
+  }
+
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     requestAnimationFrame(() => requestAnimationFrame(runSnapshot));
     return;
   }
 
-  armTimer();
+  const arm = () => armTimer();
+  if (typeof img.decode === "function") {
+    img.decode().then(arm).catch(arm);
+  } else {
+    arm();
+  }
 }
