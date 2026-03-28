@@ -1,4 +1,4 @@
-import introGif from "@/components/CTLI INTRo.gif";
+import introGif from "@/components/ctli_intro.gif";
 import { HERO_INTRO_GIF_LOOP_MS } from "@/config/heroIntroGifMeta";
 
 export const HERO_INTRO_GIF_BUNDLE_SRC =

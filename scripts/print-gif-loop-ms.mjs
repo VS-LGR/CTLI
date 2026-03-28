@@ -63,7 +63,7 @@ function parseGifFrameDelaysMs(data) {
   return delays;
 }
 
-const gifPath = path.join(root, "src", "components", "CTLI INTRo.gif");
+const gifPath = path.join(root, "src", "components", "ctli_intro.gif");
 const buf = fs.readFileSync(gifPath);
 const delays = parseGifFrameDelaysMs(buf);
 const total = delays.reduce((a, d) => a + d, 0);
