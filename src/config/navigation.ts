@@ -12,29 +12,30 @@ type NavigationConfig = Record<
   }
 >;
 
+/** Rotas absolutas para funcionar fora da home (âncoras com /{lang}#id). */
 export const navigationConfig: NavigationConfig = {
   pt: {
     items: [
-      { label: "Início", href: "#hero" },
-      { label: "A empresa", href: "#about" },
-      { label: "Serviços", href: "#services" },
-      { label: "Treinamentos", href: "#trainings" },
-      { label: "Metodologia", href: "#methodology" },
-      { label: "Acreditação 17025", href: "#certification" },
-      { label: "Clientes", href: "#clients" },
-      { label: "Contato", href: "#contact" }
+      { label: "Início", href: "/pt#hero" },
+      { label: "A empresa", href: "/pt#about" },
+      { label: "Serviços", href: "/pt#services" },
+      { label: "Treinamentos", href: "/pt#trainings" },
+      { label: "Metodologia", href: "/pt#methodology" },
+      { label: "Acreditação 17025", href: "/pt#certification" },
+      { label: "Clientes", href: "/pt/clientes" },
+      { label: "Contato", href: "/pt#contact" }
     ]
   },
   en: {
     items: [
-      { label: "Home", href: "#hero" },
-      { label: "About", href: "#about" },
-      { label: "Services", href: "#services" },
-      { label: "Training", href: "#trainings" },
-      { label: "Methodology", href: "#methodology" },
-      { label: "ISO/IEC 17025", href: "#certification" },
-      { label: "Clients", href: "#clients" },
-      { label: "Contact", href: "#contact" }
+      { label: "Home", href: "/en#hero" },
+      { label: "About", href: "/en#about" },
+      { label: "Services", href: "/en#services" },
+      { label: "Training", href: "/en#trainings" },
+      { label: "Methodology", href: "/en#methodology" },
+      { label: "ISO/IEC 17025", href: "/en#certification" },
+      { label: "Clients", href: "/en/clientes" },
+      { label: "Contact", href: "/en#contact" }
     ]
   }
 };

@@ -8,6 +8,7 @@ type SeoEntry = {
 
 type SeoConfig = {
   home: Record<SupportedLang, SeoEntry>;
+  clients: Record<SupportedLang, SeoEntry>;
 };
 
 export const seoConfig: SeoConfig = {
@@ -25,6 +26,20 @@ export const seoConfig: SeoConfig = {
       description:
         "CTLI — Technological Center for Leadership and Innovation. ISO/IEC 17025:2017 consulting for mass and balance calibration laboratories, technical training (metrology, EURAMET CG-18, uncertainty), CGCRE/INMETRO accreditation maintenance in the RBC, and calibration certificate spreadsheets.",
       url: "https://www.ctli.com.br/en"
+    }
+  },
+  clients: {
+    pt: {
+      title: "CTLI | Clientes — laboratórios, serviços e treinamentos",
+      description:
+        "Organizações que confiam na CTLI para acreditação ISO/IEC 17025, consultoria em metrologia e treinamentos técnicos.",
+      url: "https://www.ctli.com.br/pt/clientes"
+    },
+    en: {
+      title: "CTLI | Clients — laboratories, services and training",
+      description:
+        "Organizations that trust CTLI for ISO/IEC 17025 accreditation, metrology consulting and technical training.",
+      url: "https://www.ctli.com.br/en/clientes"
     }
   }
 };

@@ -95,7 +95,7 @@ export function HeroSection({ lang }: HeroSectionProps) {
                 {heroCtaLabels.secondary[lang]}
               </a>
               <a
-                href="#trainings"
+                href={`/${lang}#trainings`}
                 className="text-center text-sm font-medium text-slate-400 underline-offset-4 sm:text-left hover:text-slate-200 hover:underline"
               >
                 {heroCtaLabels.tertiaryAnchor[lang]}
