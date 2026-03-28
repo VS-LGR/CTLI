@@ -200,7 +200,7 @@ body.page-bg {
 
 .hero-gif-layer .hero-gif-inner {
   opacity: 0;
-  animation: hero-gif-inner-fade 0.55s ease
+  animation: hero-gif-inner-fade 0.9s cubic-bezier(0.45, 0, 0.55, 1)
     calc(var(--hero-gif-reveal-delay) + var(--hero-gif-reveal-duration) + 0.05s)
     forwards;
 }
